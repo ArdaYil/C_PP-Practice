@@ -1,9 +1,15 @@
-#ifndef CLASSES_RECTANGLE_HPP
-#define CLASSES_RECTANGLE_HPP
+#ifndef SRC_CLASSES_RECTANGLE_H
+#define SRC_CLASSES_RECTANGLE_H
+
+#include <string>
+
+using namespace std;
 
 class Rectangle {
    public:
     Rectangle(int width, int height);
+    Rectangle(int width, int height, const string& color);
+    Rectangle();
 
     int getArea();
     void draw();
@@ -17,6 +23,7 @@ class Rectangle {
    private:
     int width;
     int height;
+    string color;
 };
 
-#endif  // CLASSES_RECTANGLE_HPP
+#endif  // CLASSES_RECTANGLE_H
