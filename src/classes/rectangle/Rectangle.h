@@ -8,22 +8,28 @@ using namespace std;
 class Rectangle {
    public:
     Rectangle(int width, int height);
+    Rectangle(const Rectangle& source) = delete;
     Rectangle(int width, int height, const string& color);
     Rectangle();
 
-    int getArea();
-    void draw();
+    ~Rectangle();
 
-    int getWidth();
+    int getArea() const;
+    void draw() const;
+    int getWidth() const;
+    int getHeight() const;
+
     void setWidth(int width);
-
-    int getHeight();
     void setHeight(int width);
+
+    static int getObjectsCount();
 
    private:
     int width;
     int height;
     string color;
+
+    static int objectsCount;
 };
 
 #endif  // CLASSES_RECTANGLE_H

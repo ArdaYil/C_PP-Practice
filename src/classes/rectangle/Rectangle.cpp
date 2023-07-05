@@ -7,6 +7,8 @@ using namespace std;
 Rectangle::Rectangle() = default;
 
 Rectangle::Rectangle(int width, int height) {
+    objectsCount++;
+
     cout << "Creating rectangle" << endl;
 
     setWidth(width);
@@ -19,11 +21,15 @@ Rectangle::Rectangle(int width, int height, const string& color) : Rectangle(wid
     this->color = color;
 }
 
-int Rectangle::getArea() {
+Rectangle::~Rectangle() {
+    cout << "Destructor called";
+}
+
+int Rectangle::getArea() const {
     return width * height;
 }
 
-void Rectangle::draw() {
+void Rectangle::draw() const {
     cout << "Drawing rectangle: "
          << "Dimensions { "
          << width << ", "
@@ -31,7 +37,7 @@ void Rectangle::draw() {
          << endl;
 }
 
-int Rectangle::getWidth() {
+int Rectangle::getWidth() const {
     return width;
 }
 
@@ -42,7 +48,7 @@ void Rectangle::setWidth(int width) {
     this->width = width;
 }
 
-int Rectangle::getHeight() {
+int Rectangle::getHeight() const {
     return height;
 }
 
@@ -51,4 +57,10 @@ void Rectangle::setHeight(int height) {
         throw invalid_argument("Height cannot be less than 0");
 
     this->height = height;
+}
+
+int Rectangle::objectsCount = 0;
+
+int Rectangle::getObjectsCount() {
+    return Rectangle::objectsCount;
 }

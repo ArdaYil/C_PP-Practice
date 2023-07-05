@@ -5,12 +5,12 @@
 
 using namespace std;
 
-void show(const Textbox& textbox) {
-    cout << textbox.getValue();
+void showRectangle(Rectangle rectangle) {
+    cout << &rectangle;
 }
 
 int main() {
-    Rectangle rectangle(10, 20, "red");
+    auto rectangle = make_unique<Rectangle>();
 
     return 0;
 }
