@@ -10,7 +10,6 @@ class Rectangle {
     Rectangle(int width, int height);
     Rectangle(const Rectangle& source) = delete;
     Rectangle(int width, int height, const string& color);
-    Rectangle();
 
     ~Rectangle();
 
