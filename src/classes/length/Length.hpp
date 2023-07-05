@@ -3,7 +3,17 @@
 
 class Length {
    public:
-    Length(int length);
+    explicit Length(int length);
+
+    bool operator==(const Length& second) const;
+    bool operator==(int other) const;
+    bool operator!=(int other) const;
+    bool operator<(const Length& other) const;
+    bool operator<=(const Length& other) const;
+    bool operator>(const Length& other) const;
+    bool operator>=(const Length& other) const;
+
+    int getValue() const;
 
    private:
     int value;
