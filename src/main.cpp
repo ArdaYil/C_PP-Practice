@@ -1,5 +1,6 @@
 #include <iostream>
 
+#include "./classes/array/Array.cpp"
 #include "./classes/length/Length.cpp"
 #include "./classes/point/Point.cpp"
 #include "./classes/rectangle/Rectangle.cpp"
@@ -9,10 +10,8 @@
 using namespace std;
 
 int main() {
-    Length first{15};
-    Length second{15};
-
-    cout << boolalpha << (first < second);
+    Length length{10};
+    length.getValue();
 
     return 0;
 }
